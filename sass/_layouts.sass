@@ -1,9 +1,16 @@
 // default layout
-.l
+.l-center
+	width: 1024px
+	padding: 0 35px
+	margin: 0 auto
+	box-sizing: border-box
+.l-layout
 	+clr
-	.l-col1
-		float: left
-		width: 20%
-	.l-col2
-		float: right
-		width: 70%
+.l-column
+	float: left
+	width: 304px
+	margin-left: 20px
+	&:first-child
+		margin: 0
+	&.l-column_2
+		width: 628px

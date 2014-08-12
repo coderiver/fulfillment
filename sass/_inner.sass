@@ -1,0 +1,368 @@
+// Normally styles
+.inner
+	background: url(../img/bg-inner.jpg) no-repeat 50% 0 
+	.inner__title
+		padding-bottom: 40px
+		font-size: 40px
+		color: #fff
+		font-weight: 300
+		text-align: center
+	.inner__nav
+		border-top: 1px solid rgba(255,255,255,.25) 
+		text-align: center
+		.l-center
+			margin-top: -1px
+		a
+			display: inline-block
+			padding: 18px 28px
+			margin-left: 30px
+			vertical-align: top
+			font-size: 18px
+			color: #fff
+			text-decoration: none 
+			&:first-child
+				margin: 0
+			&.is-active
+				background: #FFF
+				color: #302515 
+				cursor: default 
+	.header
+		margin-bottom: 40px
+		
+.block
+	position: relative
+	padding: 75px 0 105px
+	z-index: 2 
+	&:after
+		content: ""
+		position: absolute
+		bottom: -18px
+		left: 50%
+		margin-left: -18px
+		+arr(36,18,#fff,b) 
+	.l-center
+		display: table
+	.block__row
+		display: table-row
+	.block__cell
+		display: table-cell
+		vertical-align: middle
+		p
+			line-height: 2
+			font-size: 18px
+			font-weight: 300
+		span
+			color: $orange 
+		&:first-child
+			width: 255px 
+			padding-left: 30px
+			text-align: center
+		.title
+			margin-bottom: 20px
+	.block__ico
+		display: inline-block
+		vertical-align: middle
+	.block__ico_time
+		+s(block-time)
+	.block__ico_task
+		+s(block-task)
+
+.info-dark
+	padding: 65px 0
+	background: url(../img/info-dark.jpg) repeat-x 50% 0 
+	font-size: 24px
+	color: #fff
+	font-weight: 300 
+	text-align: center
+
+.descr
+	display: table
+	width: 100%
+	table-layout: fixed
+	.descr__column
+		display: table-cell
+		width: 50%
+		padding: 75px 0 85px
+		background: #e1842e
+		vertical-align: top
+		&:first-child
+			background: #ff7a00
+			text-align: right
+			.descr__in
+				padding: 0 50px 0 0 
+	.descr__in
+		display: inline-block
+		width: 440px
+		padding-left: 50px
+		text-align: center
+		font-size: 18px
+		color: #fff
+	.descr__ico
+		display: inline-block
+		margin-bottom: 25px
+		vertical-align: top
+	.descr__ico_delivery
+		+s(description-delivery)
+	.descr__ico_fulfilment
+		+s(description-fulfilment)
+	.descr__title
+		margin-bottom: 25px
+		font-size: 20px
+		a
+			color: #FFF 
+		
+.tariffs
+	padding: 55px 0 75px
+	text-align: center
+	.tariffs__in	
+		line-height: 2
+
+.share
+	padding: 23px 0 27px 
+	border-top: #E3DED9 1px solid 
+	font-size: 0
+	text-align: center
+	.share__title, .share__in
+		display: inline-block
+		vertical-align: middle
+	.share__title
+		padding-right: 20px
+		font-size: 14px
+
+.solution
+	padding: 55px 0 70px
+	background: #e57a2a 
+	color: #fff
+	text-align: center 
+	.solution__counter
+		display: inline-block
+		width: 80px
+		height: 80px
+		margin-bottom: 30px
+		border: 1px solid #eda26a
+		border-radius: 50% 
+		vertical-align: top
+		font-size: 48px
+		font-weight: 300 
+		line-height: 80px
+	.solution__title	
+		margin-bottom: 20px 
+		font-size: 20px
+		font-weight: 300
+	.solution__text
+		font-size: 16px
+		font-weight: 300
+
+.result
+	padding: 55px 0 90px 
+	text-align: center
+	.result__title
+		margin-bottom: 40px
+		font-size: 12px
+		text-transform: uppercase
+		color: #544438 
+		font-weight: 300 
+	.result__ico
+		display: inline-block
+		margin-bottom: 30px 
+		vertical-align: top
+	.result__ico_1
+		+s(result1)
+	.result__ico_2
+		+s(result2)
+	.result__ico_3
+		+s(result3)
+	.result__type
+		margin-bottom: 25px
+		font-size: 20px
+	.result__text
+		padding: 0 10px
+		text-align: left
+		p
+			margin-bottom: 10px
+
+.exp
+	padding: 70px 0
+	background: #F6F6F6
+	text-align: center
+	.exp__title
+		margin-bottom: 10px
+		color: $orange
+		font-size: 80px
+		font-weight: 100  
+	.exp__text
+		width: 450px
+		margin: 0 auto 45px
+
+.delivery-time
+	padding: 70px 0 110px 
+	background: url(../img/bg-delivery-time.jpg) no-repeat 50% 50%
+	color: #FFF 
+	.delivery-time__in
+		width: 500px
+		margin: 0 auto
+	.delivery-time__result
+		text-align: center
+	.delivery-time__value, .delivery-time__from, .delivery-time__to
+		display: inline-block
+		vertical-align: top
+	.delivery-time__from, .delivery-time__to
+		width: 400px
+		font-size: 20px
+		color: $orange
+		span
+			color: #FFF
+	.delivery-time__from
+		text-align: right
+	.delivery-time__to
+		text-align: left
+	.delivery-time__value
+		margin: 0 30px
+		padding-top: 9px
+		i
+			display: block
+			margin-bottom: 8px
+			+s(delivery-time-arr)
+		span
+			display: block
+			text-align: center
+			color: #fff 
+	.delivery-time__reload
+		padding-top: 45px
+		text-align: center
+		button
+			+s(reload)
+	.title_level-2
+		text-align: center
+	.select
+		margin-bottom: 30px
+		color: $cl 
+	.btn-wrap
+		padding-top: 10px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

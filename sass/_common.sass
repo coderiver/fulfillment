@@ -47,36 +47,277 @@
 // p
 // 	+jpg(bla)
 
++font(Reckoner Bold, reckoner_bold)
+=f
+	font-family: "Reckoner Bold", Arial, sans-serif 
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700,100&subset=latin,cyrillic)
+
+$orange: #ff7d00
+$hover: #ff6000
+$cl: #30200c
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
-	line-height: 1.4
+	min-width: 1024px
+	font-family: "Roboto", Arial, sans-serif 
+	font-size: 14px 
+	font-weight: 400 
+	line-height: 1.3
+	color: $cl 
+a
+	color: $orange
+button
+	background: none  
 
 
-// common blocks      
+// common blocks  
+.wrapper
+	min-height: 100%
+	margin: 0 auto -255px
+	.wrapper__push
+		height: 255px
+    
+.header
+	position: relative
+	padding-top: 42px
+	z-index: 4 
+	.l-center
+		position: relative
+		+clr 
+	.header__logo
+		float: left
+		+s(logo)
+	.header__top
+		float: right
+		margin-bottom: 35px
+	.header__join
+		float: right
+		margin-left: 45px
+	.header__language
+		float: right
+		margin: 5px 0 0 40px 
+		a
+			display: block
+			padding: 5px 18px
+			border: 1px solid #fff
+			border-radius: 15px
+			text-decoration: none
+			color: #FFF 
+	.header__phones
+		float: right
+		margin-top: 10px
+		li
+			float: left
+			margin-left: 15px
+			font-size: 16px
+			font-weight: 700
+			color: #fff  
+			&:first-child
+				margin: 0
+	.header__nav
+		float: right
+		a
+			float: left
+			margin-left: 30px 
+			padding-bottom: 3px
+			border-bottom: 1px solid rgba(255,255,255,.5)
+			font-size: 16px
+			color: #fff
+			font-weight: 300
+			text-decoration: none 
+			&:first-child
+				margin: 0 
+			&.is-active
+				border-color: transparent
 
+.btn
+	padding: 0 30px
+	background: $orange
+	border-radius: 7px 
+	+skew(-15deg, 0)
+	+tr(background-color .2s)
+	&:hover
+		background: $hover 
+	span
+		display: block
+		+skew(15deg, 0)
+		font-size: 11px
+		text-transform: uppercase
+		font-weight: 700
+		color: #fff
+		line-height: 40px
+		letter-spacing: 2px 
+a.btn
+	display: inline-block
+	text-decoration: none
 
+.title
+	margin-bottom: 30px
+	font-weight: 300 
+	font-size: 28px
+	&.title_level-2
+		font-size: 24px
+	&.title_level-3
+		margin-bottom: 15px
+		font-size: 20px
+	&.title_orange
+		color: $orange 
+	.title__link
+		position: relative
+		display: inline-block
+		padding-right: 26px
+		text-decoration: none
+		color: $cl 
+		&:after
+			content: ""
+			position: absolute
+			top: 12px
+			right: 0
+			+s(title-link)
 
+.join
+	padding: 75px 0
+	background: url(../img/join.jpg) no-repeat 50% 50%
+	text-align: center 
 
+.footer
+	height: 255px
+	padding: 105px 0 20px
+	background: $cl
+	box-sizing: border-box
+	.footer__phones
+		margin: 0 200px
+		text-align: center
+		li
+			display: inline-block
+			margin-left: 20px
+			vertical-align: top
+			font-size: 16px 
+			color: #FFF
+			font-weight: 700   
+			&:first-child
+				margin: 0 
 
+.created
+	float: right
+	font-size: 0
+	a, i, span
+		display: inline-block
+		vertical-align: middle
+		font-size: 12px
+		color: #CEC2B1
+		line-height: 1.2
+		font-weight: 300 
+	a
+		border-bottom: 1px solid 
+		text-decoration: none
+	i
+		margin: 0 7px 0 6px
+		+s(created)
+	
+.copyright
+	float: left
+	margin-top: 2px
+	font-size: 12px
+	color: #cec2b1
+	font-weight: 300  
 
+.go-top
+	padding-top: 55px
+	text-align: center
+	button
+		position: relative
+		height: 30px
+		padding: 0 30px 0 45px
+		border: 1px solid #fff
+		border-radius: 15px 
+		text-transform: uppercase
+		color: #FFF
+		font-weight: 300  
+		+tr(all .2s)
+		overflow: visible
+		&:after, &:before
+			content: ""
+			position: absolute
+			top: 11px
+			left: 20px
+			+tr(opacity .2s)
+		&:before
+			+s(go-top-arr)
+		&:after
+			+s(go-top-arr-h)
+		&:after
+			opacity: 0 
+		&:hover
+			background: #fff
+			color: $cl
+			&:after
+				opacity: 1
+			&:before
+				opacity: 0 
 
+.anim-block
+	opacity: 0
+	+transform(translateY(50px))
+	+transition(opacity .4s, transform .4s)
+	&.is-shown
+		opacity: 1 
+		+transform(translateY(0px))
 
+.field
+	.field__label
+		margin-bottom: 10px
 
+.select
+	position: relative
+	cursor: pointer
+	z-index: 10
+	&.is-open
+		z-index: 999 
+	.select__head
+		position: relative
+		background: #FFF
+		border: 1px solid #302515
+	.select__title
+		padding: 0 35px 0 15px
+		line-height: 39px
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
+	.select__arr
+		position: absolute
+		top: 17px
+		right: 13px
+		+arr(10,6,$orange,b) 
+	.select__list
+		display: none
+		position: absolute
+		top: 43px
+		left: 0
+		right: 0
+		padding: 10px 15px
+		background: #FFF 
+		border: 1px solid #302515
+		ul
+			max-height: 193px
+			overflow: auto
+			&::-webkit-scrollbar
+				width: 5px
+				height: 5px
+			&::-webkit-scrollbar-thumb
+				background: $orange
+			&::-webkit-scrollbar-track-piece
+				background: #dedede
+		li
+			margin-top: 7px
+			+tr(color .2s)
+			&:first-child
+				margin: 0
+			&:hover
+				color: $orange 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.btn-wrap
+	text-align: center
 
 
 

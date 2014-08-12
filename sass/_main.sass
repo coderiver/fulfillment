@@ -1,14 +1,191 @@
 // Normally mainpage styles
+.main
+	position: relative
+	height: 687px
+	.main__slider
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 2 
+	.main__slide
+		position: relative
+		width: 100%
+		height: 687px
+		background-position: 50% 50% 
+		background-repeat: no-repeat
+		&.is-active
+			.main__title
+				opacity: 1 
+	.main__slide_1
+		background-image: url(../img/main-slide1.jpg)
+		.main__title
+			background-image: url(../img/main-slide1-title.png)
+	.main__slide_2
+		background-image: url(../img/main-slide2.jpg)
+		.main__title
+			background-image: url(../img/main-slide2-title.png)
+	.main__slide_3
+		background-image: url(../img/main-slide3.jpg)
+		.main__title
+			background-image: url(../img/main-slide3-title.png)
+	.main__title
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0 
+		background-position: 50% 50% 
+		background-repeat: no-repeat
+		opacity: 0 
+		+transition(opacity .4s)
+		+transition-delay(.4s)
+	.main__pager
+		position: absolute
+		bottom: 60px
+		left: 0
+		right: 0
+		text-align: center
+		z-index: 101 
+		button
+			position: relative
+			display: inline-block
+			margin: 0 7px
+			padding: 0 23px  
+			vertical-align: top
+			font-size: 18px
+			color: #FFF
+			text-decoration: none 
+			+tr(color .2s)
+			overflow: visible
+			&:after, &:before
+				content: ""
+				position: absolute
+				opacity: 0
+				visibility: hidden
+				+tr(all .2s) 
+			&:after
+				top: 5px
+				right: 0
+				+s(main-nav-arr)
+			&:before
+				bottom: -60px
+				left: 50%
+				margin-left: -18px
+				+arr(36,18,#fff,t)
+			&.is-active
+				color: $orange
+				&:after, &:before
+					opacity: 1
+					visibility: visible
 
+.m-about
+	padding: 60px 0 30px
+	text-align: center
 
+.m-work
+	padding: 70px 0
+	background: #F6F6F6
+	.l-center
+		padding: 0 20px
+	.m-work__head
+		width: 320px
+		margin: 0 auto 35px
+		font-weight: 300
+		text-align: center
+	.m-work__title-sub
+		text-transform: uppercase
+		font-size: 12px
+		line-height: 2
+		color: #544438
+	.m-work__in
+		position: relative
+		height: 400px
+		background: url(../img/m-work.png) no-repeat 50% 50%
+		font-size: 15px
+		color: #2b2b2b 
+		li
+			position: absolute
+	.title
+		margin-bottom: 20px
 
+.m-action
+	padding-top: 30px
+	text-align: center
+	.m-action__ava
+		margin-bottom: 30px
+		font-size: 0
+		img
+			border-radius: 50% 
+	.m-action__title
+		padding: 0 20px
+		margin-bottom: 20px
+		font-size: 18px
+	.m-action__date
+		font-size: 12px
+		color: #CECECE  
 
+.m-posts
+	padding-top: 80px
+	li
+		margin-top: 30px
+	a
+		font-size: 16px
+		font-weight: 300 
+	span
+		padding-left: 10px
+		font-size: 12px
+		color: #CECECE
+		
+.m-info
+	padding: 40px 0 90px 
+	border-bottom: #E6DEDA 1px solid 
 
+.m-leaders
+	padding: 70px 0 110px 
+	.m-leaders__head
+		width: 380px
+		margin: 0 auto 40px
+		text-align: center
+		.title
+			margin-bottom: 20px
+	.m-leaders__title
+		text-transform: uppercase
+		font-size: 12px
+		line-height: 2
+		color: #544438
+	.m-leaders__list
+		font-size: 0
+		text-align: center
+		li
+			display: inline-block
+			width: 20%
+			padding: 0 20px
+			vertical-align: middle
+			box-sizing: border-box
+		img
+			max-width: 100%
 
+.digit
+	min-height: 300px
+	margin-bottom: 20px
+	padding: 30px
+	background: #fbf7ec
+	text-align: center
+	.digit__number
+		margin-bottom: 20px
+		font-size: 120px 
+		line-height: 1
 
-
-
-
+.join-fb
+	text-align: center
+	.join-fb__title, .join-fb__in
+		display: inline-block
+		vertical-align: middle
+	.join-fb__title
+		margin-right: 20px
+		font-size: 13px
 
 
 
