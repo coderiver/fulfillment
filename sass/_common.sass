@@ -138,8 +138,13 @@ button
 	+tr(background-color .2s)
 	&:hover
 		background: $hover 
+	&.btn_simple
+		border-radius: 14px 
+		+skew(0, 0)
+		span
+			+skew(0, 0)
 	span
-		display: block
+		display: inline-block
 		+skew(15deg, 0)
 		font-size: 11px
 		text-transform: uppercase
@@ -147,6 +152,16 @@ button
 		color: #fff
 		line-height: 40px
 		letter-spacing: 2px 
+		vertical-align: middle
+	.btn__arr, .btn__calc
+		display: inline-block
+		vertical-align: middle
+	.btn__arr
+		margin: 0 -12px 0 12px
+		+s(btn-arr)
+	.btn__calc
+		margin: -3px 14px 0 4px
+		+s(btn-calc)
 a.btn
 	display: inline-block
 	text-decoration: none
@@ -174,6 +189,14 @@ a.btn
 			top: 12px
 			right: 0
 			+s(title-link)
+
+.title-sub
+	margin-bottom: 30px
+	font-size: 12px
+	text-transform: uppercase
+	font-weight: 300 
+	color: #544438
+	line-height: 2
 
 .join
 	padding: 75px 0
@@ -267,6 +290,19 @@ a.btn
 .field
 	.field__label
 		margin-bottom: 10px
+	.field__el
+		&.has-error
+			.help-block
+				display: none
+		input
+			width: 100%
+			height: 41px
+			padding: 0 15px
+			border: 1px solid #c2c2c2
+			box-sizing: border-box
+			font-size: 14px
+			&:focus
+				border-color: #302515
 
 .select
 	position: relative
