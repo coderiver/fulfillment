@@ -177,6 +177,8 @@ a.btn
 		font-size: 20px
 	&.title_orange
 		color: $orange 
+	span
+		color: $orange 
 	.title__link
 		position: relative
 		display: inline-block
@@ -288,21 +290,27 @@ a.btn
 		+transform(translateY(0px))
 
 .field
+	margin-bottom: 25px
 	.field__label
 		margin-bottom: 10px
 	.field__el
 		&.has-error
 			.help-block
 				display: none
-		input
+		input, textarea
 			width: 100%
-			height: 41px
-			padding: 0 15px
 			border: 1px solid #c2c2c2
 			box-sizing: border-box
 			font-size: 14px
 			&:focus
 				border-color: #302515
+		input
+			height: 41px
+			padding: 0 15px
+		textarea
+			height: 80px
+			padding: 10px 15px
+			resize: vertical
 
 .select
 	position: relative

@@ -26,6 +26,12 @@
 				background: #FFF
 				color: #302515 
 				cursor: default 
+	.inner__nav_small
+		a
+			padding: 18px 22px
+			margin-left: 20px
+			&:first-child
+				margin: 0
 	.header
 		margin-bottom: 40px
 		
@@ -74,6 +80,8 @@
 	color: #fff
 	font-weight: 300 
 	text-align: center
+	span
+		color: $orange 
 
 .descr
 	display: table
@@ -166,17 +174,19 @@
 		+s(result2)
 	.result__ico_3
 		+s(result3)
+	.result__ico_4
+		+s(result4)
 	.result__type
 		margin-bottom: 25px
 		font-size: 20px
 	.result__text
-		padding: 0 10px
+		padding: 0 15px
 		text-align: left
 		p
 			margin-bottom: 10px
 
 .exp
-	padding: 70px 0
+	padding: 70px 0 50px
 	background: #F6F6F6
 	text-align: center
 	.exp__title
@@ -189,10 +199,11 @@
 		margin: 0 auto 45px
 
 .delivery-time
-	padding: 70px 0 110px 
+	padding: 70px 0
 	background: url(../img/bg-delivery-time.jpg) no-repeat 50% 50%
 	color: #FFF 
 	.delivery-time__in
+		display: none
 		width: 500px
 		margin: 0 auto
 	.delivery-time__result
@@ -253,7 +264,7 @@
 			line-height: 1.8
 			text-align: left
 			&:first-child
-				min-height: 105px
+				min-height: 115px
 				&:before, &:after
 					content: ""
 					position: absolute
@@ -277,6 +288,11 @@
 .how-join
 	padding: 60px 0 90px
 	text-align: center 
+	&.how-join_asks
+		.how-join__phones
+			margin-bottom: 35px
+			font-size: 24px
+			font-weight: 400 
 	.how-join__title
 		width: 430px
 		margin: 0 auto 30px
@@ -290,7 +306,10 @@
 	.how-join__phones
 		margin-top: 20px
 		font-size: 16px
-		font-weight: 700 
+		font-weight: 700
+	.how-join__mail
+		text-align: center
+		font-style: italic
 
 .reviews
 	padding: 60px 0 100px 
@@ -464,8 +483,6 @@
 			text-align: center
 		.title_level-3
 			text-align: left
-		.field
-			margin-bottom: 25px
 		.select
 			margin-bottom: 45px
 		.btn-wrap
@@ -476,20 +493,26 @@
 	position: fixed
 	top: 0
 	left: 0
-	right: 0
-	bottom: 0
-	background: rgba(213,197,173,.9) 
-	z-index: 999 
+	width: 100%
+	height: 100%
+	background: transparent
+	overflow: hidden
+	+tr(background .2s)
 	+vertical
+	&.is-open
+		background: rgba(213,197,173,.9) 
+		.gallery__in
+			opacity: 1
+			+transform(translateX(0px))
+			+transition-delay(.2s)
 	.gallery__in
 		position: relative
 		display: inline-block
 		vertical-align: middle
+		opacity: 0 
+		+transform(translateX(200px))
+		+tr(all .4s)
 		font-size: 0
-	.gallery__slider
-		img
-			max-width: 100%
-			max-height: 100%
 	.gallery__close
 		position: absolute
 		top: -50px
@@ -509,44 +532,592 @@
 		margin-left: 450px 
 		+s(arr-next)
 
+.tariff-ffm
+	padding: 60px 0 75px
+	text-align: center
 
+.about-cities
+	padding: 60px 0
+	text-align: center
+	.about-cities__counter
+		margin-bottom: 30px
+		text-align: center
+		font-size: 80px
+		font-weight: 100 
+		color: $orange
+		line-height: 1
+	.about-cities__text
+		width: 355px
+		margin: 0 auto 
 
+.about-begin
+	position: relative
+	padding: 70px 0
+	border-top: #E3DED9 1px solid 
+	text-align: center
+	z-index: 2 
+	&:after
+		content: ""
+		position: absolute
+		bottom: -18px
+		left: 50%
+		margin-left: -18px
+		+arr(36,18,#fff,b) 
+	p
+		line-height: 2
 
+.our-values
+	padding: 50px 0 70px
+	text-align: center
+	.our-values__ico 
+		display: inline-block
+		margin-bottom: 30px
+	.our-values__ico-1
+		+s(our-values1)
+	.our-values__ico-2
+		+s(our-values2)
+	.our-values__ico-3
+		+s(our-values3)
+	.our-values__title
+		margin-bottom: 20px
+		font-size: 20px
+	.our-values__text
+		padding: 0 10px
+	.our-values__main
+		display: inline-block
+		margin-top: 85px
+		padding: 20px 45px
+		border: 2px solid $orange
+		border-radius: 10px
+		+skew(-15deg, 0)
+		font-size: 24px
+		font-weight: 300 
+	.title
+		margin-bottom: 20px
 
+.concurents
+	padding: 60px 0 80px
+	background: $orange
+	color: #FFF
+	text-align: center  
+	.concurents__text
+		line-height: 1.9
 
+.about
+	padding: 70px 0
+	text-align: center
+	font-size: 18px
+	font-weight: 300
+	line-height: 2  
+	span
+		color: $orange
+	&.about_arr
+		position: relative
+		z-index: 2 
+		&:after
+			content: ""
+			position: absolute
+			bottom: -18px
+			left: 50%
+			margin-left: -18px
+			+arr(36,18,#fff,b) 
 
+.staff
+	margin-bottom: 100px
+	.staff__details
+		margin-bottom: 55px
+		background: #f6f6f6
+	.staff__man
+		padding: 30px 30px 0
+		font-size: 0
+	.staff__photo, .staff__info
+		display: inline-block
+	.staff__photo
+		width: 424px
+		text-align: right
+		vertical-align: bottom
+		img
+			max-width: 100%
+			max-height: 100%
+	.staff__info
+		width: 450px
+		margin-right: 20px
+		padding-top: 30px
+		vertical-align: top
+	.staff__text
+		margin-bottom: 30px
+		font-size: 14px
+	.staff__phones
+		margin-bottom: 20px
+		font-size: 18px
+		font-weight: 700 
+	.staff__mail
+		font-size: 16px
+		font-style: italic
+		color: $orange
+	.staff__list
+		position: relative
+		padding: 0 62px
+	.staff__prev, .staff__next
+		position: absolute
+		top: 50%
+		margin-top: -18px
+		+tr(all .2s)
+		&.disabled
+			opacity: 0 
+			visibility: hidden
+	.staff__prev
+		left: 0
+		+s(arr-prev)
+	.staff__next
+		right: 0
+		+s(arr-next)
+	.staff__people
+		font-size: 0
+	.staff__item
+		display: inline-block
+		width: 146px
+		padding: 0 10px
+		vertical-align: top
+		text-align: center
+		cursor: pointer
+		white-space: normal
+		&:hover
+			.staff__ava
+				img
+					opacity: .45 
+		&.is-active
+			.staff__ava
+				border-color: $orange
+				img
+					opacity: .45
+			.staff__name
+				border-color: transparent
+				color: $orange 
+	.staff__ava
+		display: inline-block
+		margin-bottom: 15px
+		border-radius: 50%
+		border: 1px solid #e9e8e8
+		+tr(all .2s)
+		font-size: 0
+		img
+			border-radius: 50%
+			+tr(opacity .2s)
+	.staff__name
+		display: inline
+		border-bottom: 1px dotted $cl 
+		font-size: 14px
+		+tr(all .2s)
+	.title
+		margin-bottom: 10px
+		
+.we-offer
+	padding: 60px 0 100px
+	.we-offer__list
+		margin-bottom: 75px
+		text-align: center
+		ul
+			display: inline-block
+			width: 350px
+			vertical-align: top
+			text-align: left
+			&:first-child
+				width: 280px
+				padding-left: 150px
+				margin-right: 70px
+		li
+			position: relative
+			margin-bottom: 25px
+			padding-left: 38px
+			font-size: 18px
+			font-weight: 300 
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				+s(ok)
+	.we-offer__text
+		text-align: center
+		font-size: 16px
+		font-style: italic
+	.title
+		text-align: center
 
+.posts
+	width: 600px
+	padding: 80px 0 115px
+	margin: 0 auto
+	.posts__list
+		margin-bottom: 130px
+	.posts__item
+		display: block
+		margin-bottom: 100px
+		text-decoration: none
+		+clr
+		&:hover
+			.posts__pic
+				img
+					border-color: $orange
+			.posts__title
+				border-color: transparent
+	.posts__pic
+		float: left
+		margin-right: 56px
+		img
+			display: block
+			border-radius: 50%
+			border: 2px solid transparent
+			+tr(border-color .2s)
+	.posts__info
+		display: table
+		padding-top: 20px
+	.posts__title
+		display: inline
+		border-bottom: 1px solid $orange 
+		font-size: 18px
+		+tr(all .2s)
+	.posts__text
+		margin-top: 15px
+		line-height: 1.8
+		color: $cl 
+	.posts__date
+		margin-top: 15px
+		font-size: 12px
+		color: #CECECE 
 
+.pager
+	text-align: center
+	a
+		display: inline-block
+		width: 23px
+		height: 23px
+		margin: 0 7px
+		border-radius: 50% 
+		vertical-align: top
+		font-size: 14px
+		line-height: 23px
+		color: $cl
+		text-decoration: none 
+		+tr(all .2s)
+		&.is-active
+			background: $orange
+			color: #fff  
 
+.post
+	padding: 80px 0 110px
+	.post__in
+		+clr
+	.post__pic
+		float: left
+		margin-right: 60px
+		img
+			display: block
+			border-radius: 50% 
+	.post__content
+		display: table
+	.post__date
+		margin-bottom: 25px 
+		font-size: 12px
+		color: #cecece 
+	.post__source
+		color: #cecece 
+		font-weight: 300 
+		a
+			font-style: italic
+			color: #cecece 
+	.title
+		margin-bottom: 40px
+		text-align: center
 
+.content
+	line-height: 2
+	>*
+		margin-bottom: 25px 
+	ul
+		-webkit-column-count: 2
+		-moz-column-count: 2
+		-o-column-count: 2
+		column-count: 2
+		li
+			position: relative
+			width: 100% 
+			margin-bottom: 20px
+			padding-left: 55px
+			box-sizing: border-box
+			font-style: italic 
+			line-height: 1.3
+			&:before
+				content: ""
+				position: absolute
+				top: 5px
+				left: 30px
+				width: 7px
+				height: 7px
+				background: $orange
+				border-radius: 50%   
 
+.back
+	padding-top: 50px
+	a
+		display: inline-block
+		position: relative
+		padding-left: 18px 
+		text-decoration: none
+		color: $cl 
+		&:before	
+			content: ""
+			position: absolute
+			top: 2px
+			left: 0
+			+s(back-arr)
+		
+.sort
+	margin-bottom: 110px
+	padding-left: 210px
+	a
+		display: inline-block
+		margin-left: 35px
+		border-bottom: 1px solid #a9a7a3
+		font-size: 16px
+		text-decoration: none
+		color: $cl
+		+tr(all .2s)
+		&:first-child
+			margin: 0
+		&:hover, &.is-active
+			border-color: transparent
+			color: $orange
 
+.albums
+	padding: 80px 0 110px
+	text-align: center
+	.albums__list
+		font-size: 0
+	.albums__item
+		display: inline-block
+		width: 33%
+		margin-bottom: 100px
+		padding: 0 20px
+		vertical-align: top
+		box-sizing: border-box
+		text-decoration: none
+		&:hover
+			.albums__pic
+				img
+					border-color: $orange
+			.albums__title
+				border-color: transparent 
+	.albums__pic
+		margin-bottom: 25px
+		img
+			border-radius: 50%
+			border: 2px solid transparent
+			+tr(border-color .2s)
+	.albums__title
+		display: inline
+		border-bottom: 1px solid $orange 
+		font-size: 18px
+		+tr(border-color .2s)
+	.albums__date
+		margin-top: 15px
+		font-size: 12px
+		color: #cecece 
+	.sort
+		padding: 0
 
+.photos
+	padding: 80px 0
+	.photos__head
+		margin-bottom: 50px
+		text-align: center
+	.photos__date
+		font-size: 12px
+		color: #cecece 
+	.photos__in
+		padding: 0 50px
+	.photos__slider
+		position: relative
+		margin-bottom: 60px
+	.photos__items
+		overflow: hidden
+	.photos__slide
+		width: 100%
+	.photos__prev, .photos__next
+		position: absolute
+		top: 200px
+		+tr(opacity .2s)
+		&.disabled
+			opacity: .1
+			cursor: default
+	.photos__prev
+		left: -50px
+		+s(arr-prev)
+	.photos__next
+		right: -50px
+		+s(arr-next)
+	.photos__el
+		margin-bottom: 25px
+		img
+			display: block
+			max-width: 100%
+	.photos__description
+		text-align: center
+		font-style: italic
+	.photos__preview
+		overflow: hidden
+	.photos__pager
+		margin-right: -30px
+		overflow: hidden
+		img
+			float: left
+			margin: 0 28px 28px 0 
+			border: 2px solid transparent
+			border-radius: 50% 
+			+tr(border-color .2s)
+			cursor: pointer
+			&:hover, &.is-active
+				border-color: $orange
+	.title
+		margin-bottom: 20px
 
+.what-join
+	padding: 60px 0 100px 
+	text-align: center
+	.title
+		margin-bottom: 60px
+	.btn
+		width: 230px
+		margin: 0 55px
 
+.feedback
+	padding: 60px 0 85px
+	border-top: #E3DED9 1px solid 
+	.feedback__form
+		position: relative
+		width: 500px
+		margin: 0 auto
+	.feedback__success
+		display: none
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 40px
+		background: rgba(255,255,255,.9)  
+		font-size: 16px
+		color: $orange
+		text-align: center
+		p
+			margin-bottom: 3px
+		i
+			display: inline-block
+			margin-bottom: 15px
+			+s(success)
+	.btn-wrap
+		padding-top: 5px
+	.title
+		text-align: center
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.contacts
+	padding: 75px 0 100px
+	text-align: center
+	.contacts__list
+		margin-bottom: 60px
+		font-size: 0
+	.contacts__address, .contacts__phones
+		display: inline-block
+		width: 300px 
+		margin: 0 30px
+		vertical-align: top
+		font-size: 16px
+		p
+			margin-bottom: 10px
+	.contacts__address
+		font-weight: 300 
+		span
+			font-weight: 400 
+	.contacts__phones
+		a
+			font-style: italic
+			font-weight: 300 
+	.contacts__map
+		position: relative
+		margin-bottom: 60px
+		z-index: 2 
+		&:after
+			content: ""
+			position: absolute
+			bottom: -18px
+			left: 50%
+			margin-left: -18px
+			+arr(36,18,#fff,b) 
+	.contacts__drive-types
+		li
+			position: relative
+			display: inline-block
+			width: 430px
+			padding-bottom: 30px
+			vertical-align: top
+			&:after
+				content: ""
+				position: absolute
+				bottom: 0
+				left: 50%
+				margin-left: -20px
+				opacity: 0
+				+tr(opacity .2s) 
+				+arr(40,20,#fdf5e5,t) 
+			&:first-child
+				margin-right: 70px
+			&.is-active
+				&:after
+					opacity: 1 
+				a
+					border-color: transparent
+					color: $orange
+		i
+			display: inline-block
+			margin-bottom: 25px
+		span
+			display: block
+		a
+			border-bottom: 1px dotted $cl
+			font-size: 20px
+			text-decoration: none
+			+tr(border-color .2s)
+			color: $cl 
+	.contacts__bus
+		+s(contacts-bus)
+	.contacts__car
+		+s(contacts-car)
+	.contacts__drive-container
+		padding: 50px 30px 30px
+		background: #fdf5e5 
+	.contacts__drive-content
+		line-height: 1.8
+		text-align: left
+		+clr
+		ul
+			float: left
+			width: 50%
+			&:first-child
+				li
+					padding: 0 30px
+		li
+			position: relative
+			margin-bottom: 20px
+			padding: 0 0 0 30px
+			box-sizing: border-box
+			span
+				position: absolute
+				top: -5px
+				left: 0
+				font-size: 18px
+				color: $orange  
+				
 
 
 

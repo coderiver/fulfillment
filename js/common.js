@@ -116,10 +116,17 @@ head.ready(function() {
 	// delivery time
 	function delivery_time () {
 		var el = $('.js-delivery-time'),
+				go = el.find('.delivery-time__go'),
+				go_btn = go.find('.btn'),
 				form = el.find('.delivery-time__in'),
 				result = el.find('.delivery-time__result'),
-				btn = el.find('.btn'),
+				btn = form.find('.btn'),
 				reload = el.find('.delivery-time__reload button');
+		go_btn.on('click', function () {
+			go.slideUp(function () {
+				form.slideDown();
+			});
+		});
 		btn.on('click', function () {
 			form.slideUp(function () {
 				result.slideDown();
@@ -176,13 +183,18 @@ head.ready(function() {
 	// validate
 	var el_validate = $('.js-validate');
 	if (el_validate.length) {
-		$.validate({
-		  form: el_validate,
-		  borderColorOnError : '#dc2f00',
-		  onSuccess : function() {
-		    alert('The form is valid!');
-		    return false; // Will stop the submission of the form
-		  }
+		el_validate.each(function () {
+			var el_this = $(this);
+			$.validate({
+			  form: el_this,
+			  borderColorOnError : '#dc2f00',
+			  onSuccess : function() {
+			    if (el_this.hasClass('feedback__form')) {
+			    	el_this.find('.feedback__success').fadeIn();
+			    };
+			    return false; // Will stop the submission of the form
+			  }
+			});
 		});
 	};
 
@@ -192,23 +204,87 @@ head.ready(function() {
 				slider = el.find('.gallery__slider'),
 				slider_prev = el.find('.gallery__prev'),
 				slider_next = el.find('.gallery__next'),
+				slider_close = el.find('.gallery__close'),
 				trig = $('.js-gallery-triggers a');
 		trig.on('click', function () {
-			el.show();
-			el.addClass('is-open');
+			el.show(function () {
+				el.addClass('is-open');
+			});
 			slider.cycle({
 				fx: 'scrollHorz',
 				timeout: 0,
 				prev: slider_prev,
 				next: slider_next,
-				autoheight: 'container'
+				autoHeight: 'container'
 			});
 			var current = $(this).attr('href');
 			slider.cycle('goto', current);
 			return false;
 		});
+		slider_close.on('click', function () {
+			el.removeClass('is-open');
+			setTimeout(function () {
+				el.hide();
+			}, 400);
+		});
 	}
 	gallery();
+
+	// staff
+	function staff () {
+		var el = $('.js-staff'),
+				slider = el.find('.staff__slider'),
+				slider_item = slider.find('.staff__man'),
+				el_prev = el.find('.staff__prev'),
+				el_next = el.find('.staff__next'),
+				people = el.find('.staff__people'),
+				people_item = people.find('.staff__item');
+		slider.cycle({
+			fx: 'fade',
+			timeout: 0,
+			slides: slider_item,
+			slideActiveClass: 'is-active',
+			autoHeight: 'container'
+		});
+		people.cycle({
+			fx: 'carousel',
+			timeout: 0,
+			carouselVisible: 5,
+			slides: people_item,
+			prev: el_prev,
+			next: el_next,
+			allowWrap: false
+		});
+		$('.staff__item').on('click', function () {
+			var index = $(this).data('item');
+			slider.cycle('goto', index);
+			people.find('.staff__item').removeClass('is-active');
+			$(this).addClass('is-active')
+		});
+	}
+	staff();
+
+	function photos () {
+		var el = $('.js-photos'),
+				slider = el.find('.photos__items'),
+				slider_item = slider.find('.photos__slide'),
+				slider_prev = el.find('.photos__prev'),
+				slider_next = el.find('.photos__next'),
+				slider_pager = el.find('.photos__pager');
+		slider.cycle({
+			fx: 'scrollHorz',
+			timeout: 0,
+			slides: slider_item,
+			next: slider_next,
+			prev: slider_prev,
+			allowWrap: false,
+			autoHeight: 'container',
+			pager: slider_pager,
+			pagerActiveClass: 'is-active',
+			pagerTemplate: ""
+		})
+	}
+	photos();
 
 	// scroll
 	$(document).scroll(function () {
