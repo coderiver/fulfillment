@@ -251,7 +251,7 @@
 				<div class="delivery-time__from">Отправка из <span>Минск</span></div>
 				<div class="delivery-time__value"><i></i><span>2-4 дня</span></div>
 				<div class="delivery-time__to">Доставить в <span>Москва</span></div>
-				<div class="delivery-time__reload"><button></button></div>
+				<div class="reload"><button class="reload__btn"></button></div>
 			</div>
 		</div>
 	</div>
@@ -266,11 +266,11 @@
 					<div class="tariff__title">Старт-ап<span>(до 1000  заказов в месяц)</span></div> 
 				</div>
 				<div class="tariff__type" data-item="tariff__table_2">
-					<div class="tariff__ico tariff__ico_1"></div>
+					<div class="tariff__ico tariff__ico_2"></div>
 					<div class="tariff__title">Средний интернет-магазин<span>(1000 – 5000 заказов в месяц)</span></div>
 				</div>
 				<div class="tariff__type" data-item="tariff__table_3">
-					<div class="tariff__ico tariff__ico_1"></div>
+					<div class="tariff__ico tariff__ico_3"></div>
 					<div class="tariff__title">Крупный интернет-магазин<span>(свыше 5000 заказов в месяц)</span></div>
 				</div>
 				<!-- dublicate, remove if slides > 3 -->
@@ -279,11 +279,11 @@
 					<div class="tariff__title">Старт-ап<span>(до 1000  заказов в месяц)</span></div>
 				</div>
 				<div class="tariff__type" data-item="tariff__table_2">
-					<div class="tariff__ico tariff__ico_1"></div>
+					<div class="tariff__ico tariff__ico_2"></div>
 					<div class="tariff__title">Средний интернет-магазин<span>(1000 – 5000 заказов в месяц)</span></div>
 				</div>
 				<div class="tariff__type" data-item="tariff__table_3">
-					<div class="tariff__ico tariff__ico_1"></div>
+					<div class="tariff__ico tariff__ico_3"></div>
 					<div class="tariff__title">Крупный интернет-магазин<span>(свыше 5000 заказов в месяц)</span></div>
 				</div>
 			</div>
@@ -517,122 +517,153 @@
 			<div class="btn-wrap">
 				<button class="btn tariff__calculate"><span><i class="btn__calc"></i>онлайн-калькулятор</span></button>
 			</div>
-			<form class="tariff__calculator js-validate">
+			<!-- calculator -->
+			<div class="calculator">
 				<div class="title">Онлайн-калькулятор</div>
-				<div class="title title_level-3 title_orange">Отправка из:</div>
-				<!-- field -->
-				<div class="field">
-					<div class="field__label">Населенный пункт</div>
-					<div class="field__el">
-						<!-- select -->
-						<div class="select js-select">
-							<div class="select__head">
-								<div class="select__title">Москва</div>
-								<i class="select__arr"></i>
+				<div class="calculator__in">
+					<form class="calculator__form">
+						<div class="title title_level-3 title_orange">Отправка из:</div>
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Населенный пункт</div>
+							<div class="field__el">
+								<!-- select -->
+								<div class="select js-select">
+									<div class="select__head">
+										<div class="select__title">Москва</div>
+										<i class="select__arr"></i>
+									</div>
+									<div class="select__list">
+										<ul>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+										</ul>
+									</div>
+									<input class="select__value" type="hidden">
+								</div>
 							</div>
-							<div class="select__list">
-								<ul>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-								</ul>
-							</div>
-							<input class="select__value" type="hidden">
 						</div>
-					</div>
-				</div>
-				<div class="title title_level-3 title_orange">Отправка из:</div>
-				<!-- field -->
-				<div class="field">
-					<div class="field__label">Населенный пункт</div>
-					<div class="field__el">
-						<!-- select -->
-						<div class="select js-select">
-							<div class="select__head">
-								<div class="select__title">Москва</div>
-								<i class="select__arr"></i>
+						<div class="title title_level-3 title_orange">Отправка из:</div>
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Населенный пункт</div>
+							<div class="field__el">
+								<!-- select -->
+								<div class="select js-select">
+									<div class="select__head">
+										<div class="select__title">Москва</div>
+										<i class="select__arr"></i>
+									</div>
+									<div class="select__list">
+										<ul>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+											<li>Киев</li>
+											<li>Кременчуг</li>
+											<li>Донецк</li>
+											<li>Севастополь</li>
+											<li>Львов</li>
+										</ul>
+									</div>
+									<input class="select__value" type="hidden">
+								</div>
 							</div>
-							<div class="select__list">
-								<ul>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-									<li>Киев</li>
-									<li>Кременчуг</li>
-									<li>Донецк</li>
-									<li>Севастополь</li>
-									<li>Львов</li>
-								</ul>
-							</div>
-							<input class="select__value" type="hidden">
 						</div>
+						<div class="title title_level-3 title_orange">Параметры доставки:</div>
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Вид груза</div>
+							<div class="field__el">
+								<input type="text" value="Груз" name="gruz" data-validation="required">
+							</div>
+						</div>
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Вес, кг.</div>
+							<div class="field__el">
+								<input type="text" placeholder="0,1" name="weight" data-validation="required">
+							</div>
+						</div>
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Объемный вес, кг.</div>
+							<div class="field__el">
+								<input type="text" placeholder="0,1" name="weight1" data-validation="required">
+							</div>
+						</div>
+						<div class="btn-wrap">
+							<button class="btn" type="submit"><span>рассчитать</span></button>
+						</div>
+					</form>
+					<div class="calculator__result">
+						<div class="calculator__type">Срочная:</div>
+						<ul class="calculator__data">
+							<li>
+								<span>Срок доставки</span>
+								<span>2 - 4 дн.</span>
+							</li>
+							<li>
+								<span>Предварительная стоимость доставки</span>
+								<span>114742 руб.</span>
+							</li>
+						</ul>
+						<div class="calculator__type"><span>*</span>Сверхсрочная:</div>
+						<ul class="calculator__data">
+							<li>
+								<span>Срок доставки</span>
+								<span>2 - 4 дн.</span>
+							</li>
+							<li>
+								<span>Предварительная стоимость доставки</span>
+								<span>114742 руб.</span>
+							</li>
+						</ul>
+						<div class="calculator__info">* Услуга производится по дополнительному согласованию.</div>
+						<div class="reload"><button class="reload__btn"></button></div>
 					</div>
 				</div>
-				<div class="title title_level-3 title_orange">Параметры доставки:</div>
-				<!-- field -->
-				<div class="field">
-					<div class="field__label">Вид груза</div>
-					<div class="field__el">
-						<input type="text" value="Груз" name="gruz" data-validation="required">
-					</div>
-				</div>
-				<!-- field -->
-				<div class="field">
-					<div class="field__label">Вес, кг.</div>
-					<div class="field__el">
-						<input type="text" placeholder="0,1" name="weight" data-validation="required">
-					</div>
-				</div>
-				<!-- field -->
-				<div class="field">
-					<div class="field__label">Объемный вес, кг.</div>
-					<div class="field__el">
-						<input type="text" placeholder="0,1" name="weight1" data-validation="required">
-					</div>
-				</div>
-				<div class="btn-wrap">
-					<button class="btn" type="submit"><span>рассчитать</span></button>
-				</div>
-			</form>
+			</div>
 		</div>
 	</div>
 	<!-- how-begin -->

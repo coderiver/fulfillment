@@ -121,7 +121,7 @@ head.ready(function() {
 				form = el.find('.delivery-time__in'),
 				result = el.find('.delivery-time__result'),
 				btn = form.find('.btn'),
-				reload = el.find('.delivery-time__reload button');
+				reload = el.find('.reload__btn');
 		go_btn.on('click', function () {
 			go.slideUp(function () {
 				form.slideDown();
@@ -146,7 +146,11 @@ head.ready(function() {
 				nav = el.find('.tariff__nav'),
 				table = el.find('.tariff__table'),
 				btn_calculate = el.find('.tariff__calculate'),
-				calculator = el.find('.tariff__calculator');
+				calculator = el.find('.calculator'),
+				calculator_go = calculator.find('.btn'),
+				calculator_form = calculator.find('.calculator__form'),
+				calculator_result = calculator.find('.calculator__result'),
+				calculator_reload = calculator_result.find('.reload__btn');
 		nav.slick({
 			slide: 'div',
 			infinite: true,
@@ -176,6 +180,23 @@ head.ready(function() {
 			$(this).parent().slideUp(function () {
 				calculator.slideDown();
 			});
+		});
+		calculator_go.on('click', function () {
+			$.validate({
+			  form: calculator_form,
+			  borderColorOnError : '#dc2f00',
+			  onSuccess : function() {
+			    calculator_form.slideUp(function () {
+			    	calculator_result.slideDown();
+			    });
+			    return false; // Will stop the submission of the form
+			  }
+			});
+		});
+		calculator_reload.on('click', function () {
+			calculator_result.slideUp(function () {
+				calculator_form.slideDown();
+			})
 		});
 	}
 	tariff();
