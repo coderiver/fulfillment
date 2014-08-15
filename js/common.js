@@ -286,6 +286,22 @@ head.ready(function() {
 	}
 	photos();
 
+	// contacts
+	function contacts () {
+		var el = $('.js-contacts-drive'),
+				types = el.find('.contacts__drive-types a'),
+				content = el.find('.contacts__drive-content');
+		types.on('click', function () {
+			var index = $(this).parent().index();
+			content.hide();
+			content.eq(index).fadeIn();
+			types.parent().removeClass('is-active');
+			$(this).parent().addClass('is-active');
+			return false;
+		}).first().trigger('click');
+	}
+	contacts();
+
 	// scroll
 	$(document).scroll(function () {
 		anim_block();

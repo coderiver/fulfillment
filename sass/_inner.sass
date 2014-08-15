@@ -1045,15 +1045,19 @@
 			font-weight: 300 
 	.contacts__map
 		position: relative
+		height: 335px
+		background: gray 
 		margin-bottom: 60px
 		z-index: 2 
 		&:after
 			content: ""
 			position: absolute
-			bottom: -18px
+			top: 0
 			left: 50%
 			margin-left: -18px
-			+arr(36,18,#fff,b) 
+			+arr(36,18,#fff,b)
+	.contacts__drive
+		margin-bottom: 50px
 	.contacts__drive-types
 		li
 			position: relative
@@ -1117,8 +1121,23 @@
 				left: 0
 				font-size: 18px
 				color: $orange  
-				
-
+	.contacts__coordinates
+		text-align: center
+	.contacts__coordinates-in
+		display: inline-block
+		border: 1px solid $orange
+		border-radius: 10px 
+		+skew(-15deg, 0)
+		ul
+			padding: 20px 40px
+			vertical-align: top
+			+skew(15deg, 0)
+		li
+			&:first-child
+				margin-bottom: 10px
+		span
+			font-weight: 300 
+			font-size: 16px
 
 
 
