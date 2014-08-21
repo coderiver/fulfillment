@@ -66,6 +66,8 @@ body
 	color: $cl 
 a
 	color: $orange
+a:hover
+	text-decoration: none
 button
 	background: none  
 
@@ -102,7 +104,15 @@ button
 			border: 1px solid #fff
 			border-radius: 15px
 			text-decoration: none
-			color: #FFF 
+			color: #FFF
+			+tr(all .2s)
+			&:hover
+				background: #fff
+				color: $cl
+				&:after
+					opacity: 1
+				&:before
+					opacity: 0 
 	.header__phones
 		float: right
 		margin-top: 10px
@@ -129,6 +139,9 @@ button
 				margin: 0 
 			&.is-active
 				border-color: transparent
+			&:hover
+				color: $orange
+				border-bottom: none
 
 .btn
 	padding: 0 30px
@@ -191,6 +204,10 @@ a.btn
 			top: 12px
 			right: 0
 			+s(title-link)
+		&:hover
+			color: $orange
+			&:after
+				+s(main-nav-arr)
 
 .title-sub
 	margin-bottom: 30px
@@ -226,19 +243,26 @@ a.btn
 .created
 	float: right
 	font-size: 0
-	a, i, span
+	display: block
+	span:first-child
+		border-bottom: 1px solid 
+	i, span
 		display: inline-block
 		vertical-align: middle
 		font-size: 12px
 		color: #CEC2B1
 		line-height: 1.2
 		font-weight: 300 
-	a
-		border-bottom: 1px solid 
-		text-decoration: none
 	i
 		margin: 0 7px 0 6px
 		+s(created)
+	&:hover
+		span
+			color: $orange
+		span:first-child
+			color: #CEC2B1
+		i
+			+s(created-hov)
 	
 .copyright
 	float: left
