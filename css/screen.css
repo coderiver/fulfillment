@@ -145,7 +145,7 @@ a.btn { display: inline-block; text-decoration: none; }
 .inner .inner__nav a { display: inline-block; padding: 18px 28px; margin-left: 30px; vertical-align: top; font-size: 18px; color: white; text-decoration: none; }
 .inner .inner__nav a:first-child { margin: 0; }
 .inner .inner__nav a.is-active { background: white; color: #302515; cursor: default; }
-.inner .inner__nav_small a { padding: 18px 22px; margin-left: 20px; }
+.inner .inner__nav_small a { padding: 18px 20px; margin: 0; }
 .inner .inner__nav_small a:first-child { margin: 0; }
 .inner .header { margin-bottom: 40px; }
 
