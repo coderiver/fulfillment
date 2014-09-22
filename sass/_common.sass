@@ -68,6 +68,8 @@ a
 	color: $orange
 a:hover
 	text-decoration: none
+button, input, textarea
+	font-family: "Roboto", Arial, sans-serif 
 button
 	background: none  
 
@@ -321,20 +323,40 @@ a.btn
 		&.has-error
 			.help-block
 				display: none
-		input, textarea
+		>input, >textarea
 			width: 100%
 			border: 1px solid #c2c2c2
 			box-sizing: border-box
 			font-size: 14px
 			&:focus
 				border-color: #302515
-		input
+			+placeholder
+				font-style: italic
+				font-weight: 300 
+				color: #C2C2C2 
+		>input
 			height: 41px
 			padding: 0 15px
-		textarea
+		>textarea
 			height: 80px
 			padding: 10px 15px
 			resize: vertical
+	.field__radio
+		height: 32px 
+		padding-top: 9px
+		label
+			display: table-cell
+			padding-left: 20px
+			vertical-align: top
+			&:first-child
+				padding: 0
+			input
+				float: left
+				margin-right: 8px
+			span
+				display: block
+				margin-left: 25px
+				line-height: 1.2
 
 .select
 	position: relative
@@ -342,13 +364,24 @@ a.btn
 	z-index: 10
 	&.is-open
 		z-index: 999 
+		.select__head
+			border-color: #302515
+	&.is-active
+		.select__title
+			font-style: normal
+			font-weight: 400
+			color: $cl
 	.select__head
 		position: relative
 		background: #FFF
-		border: 1px solid #302515
+		border: 1px solid #c2c2c2
 	.select__title
+		height: 39px
 		padding: 0 35px 0 15px
 		line-height: 39px
+		font-style: italic
+		font-weight: 300 
+		color: #c2c2c2 
 		text-overflow: ellipsis
 		white-space: nowrap
 		overflow: hidden
@@ -363,7 +396,7 @@ a.btn
 		top: 43px
 		left: 0
 		right: 0
-		padding: 10px 15px
+		padding: 15px
 		background: #FFF 
 		border: 1px solid #302515
 		ul
@@ -383,6 +416,73 @@ a.btn
 				margin: 0
 			&:hover
 				color: $orange 
+	.select__items
+		max-height: 193px
+		overflow: auto
+		&::-webkit-scrollbar
+			width: 5px
+			height: 5px
+		&::-webkit-scrollbar-thumb
+			background: $orange
+		&::-webkit-scrollbar-track-piece
+			background: #dedede
+	.select__checkbox
+		display: block
+		position: relative
+		margin-top: 7px
+		cursor: pointer
+		&:first-child
+			margin: 0
+		input
+			position: absolute
+			top: 2px
+			left: 0
+			opacity: 0 
+			z-index: 2 
+			&:checked + span
+				color: $orange 
+				&:before
+					opacity: 1
+					visibility: visible 
+		span
+			display: block
+			padding-left: 25px
+			+tr(color .2s)
+			cursor: pointer
+			&:before
+				content: ""
+				position: absolute
+				top: 3px
+				left: 0
+				+s(select-checkbox)
+				opacity: 0
+				visibility: hidden
+				+tr(all .2s) 
+	.select__footer
+		margin: 15px -15px -15px
+		padding: 10px 15px
+		border-top: 1px solid #302515 
+		+clr
+	.select__all, .select__clear
+		font-size: 0
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 9px
+		span
+			font-size: 12px
+			color: #B9B9B9
+			font-weight: 100   
+	.select__all
+		float: left
+		i
+			+s(select-choice-all)
+	.select__clear
+		float: right
+		i
+			+s(select-clear)
+
 
 .btn-wrap
 	text-align: center

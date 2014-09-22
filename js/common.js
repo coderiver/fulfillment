@@ -49,7 +49,10 @@ head.ready(function() {
 
 	// select
 	function select() {
-		var el = $('.js-select');
+		var el = $('.js-select'),
+				el_checkbox = $('.js-select-checkbox'),
+				el_checkbox_all = el_checkbox.find('.select__all'),
+				el_checkbox_clear = el_checkbox.find('.select__clear');
 		el.find('.select__head').on('click', function(){		
 			if ($(this).parent().hasClass('is-open')) {
 				$(this).parent().removeClass('is-open');
@@ -57,24 +60,75 @@ head.ready(function() {
 			}
 			else {
 				el.removeClass('is-open');
-				el.find('.select__list').hide();
+				el.removeClass('is-open');
+				el_checkbox.find('.select__list').hide();
+				el_checkbox.find('.select__list').hide();
 				$(this).parent().addClass('is-open');
 				$(this).next().fadeIn();
 			}
-		})
+		});
+		el_checkbox.find('.select__head').on('click', function(){		
+			if ($(this).parent().hasClass('is-open')) {
+				$(this).parent().removeClass('is-open');
+				$(this).next().hide();
+			}
+			else {
+				el.removeClass('is-open');
+				el.removeClass('is-open');
+				el_checkbox.find('.select__list').hide();
+				el_checkbox.find('.select__list').hide();
+				$(this).parent().addClass('is-open');
+				$(this).next().fadeIn();
+			}
+		});
 		el.find('.select__list li').bind('click', function(){
 			var val = $(this).text();
 			$(this).parent().parent().prev().find('.select__title').html(val);
 			$(this).parent().parent().next().val(val);
 			$(this).parent().parent().hide();
 			$(this).parents('.select').removeClass('is-open');
-		})
+			$(this).parents('.select').addClass('is-active');
+		});
+		var el_checkbox_input = el_checkbox.find('.select__checkbox input');
+	  el_checkbox_input.on('change', function(){ 
+	  	$(this).parent().parent().parent().parent().addClass('is-active');
+	  	var value = $(this).parent().parent().find('.select__checkbox input').map(function () {
+	  		if ($(this).is(':checked')) {
+	  			return ' ' + $(this).next().text(); 
+	  		};
+	  	}).get(); 
+	  	$(this).parent().parent().parent().prev().find('.select__title').text(value);
+	  	$(this).parent().parent().parent().next().val(value);
+	  });
+	  el_checkbox_all.on('click', function () {
+	  	$(this).parent().parent().parent().addClass('is-active');
+	  	var value1 = $(this).parent().prev().find('.select__checkbox input').map(function () {
+	  		return ' ' + $(this).next().text(); 
+	  	}).get(); 
+	  	$(this).parent().parent().prev().find('.select__title').text(value1);
+	  	$(this).parent().parent().next().val(value);
+	  	$(this).parent().prev().find('.select__checkbox input').each(function () {
+	  		this.checked = true;
+	  	});
+	  });
+	  el_checkbox_clear.on('click', function () {
+	  	$(this).parent().prev().find('.select__checkbox input').each(function () {
+	  		this.checked = false;
+	  	});
+	  	$(this).parent().parent().prev().find('.select__title').text('');
+	  	$(this).parent().parent().next().val('');
+	  });
 		el.click(function(event){
+			event.stopPropagation();
+		});
+		el_checkbox.click(function(event){
 			event.stopPropagation();
 		});
 		$(document).click(function() {
 			el.find('.select__list').hide();
+			el_checkbox.find('.select__list').hide();
 			el.removeClass('is-open');
+			el_checkbox.removeClass('is-open');
 		});
 	}
 	select();
