@@ -99,6 +99,12 @@ head.ready(function() {
 	  	}).get(); 
 	  	$(this).parent().parent().parent().prev().find('.select__title').text(value);
 	  	$(this).parent().parent().parent().next().val(value);
+
+	  	var attr = $(this).attr('data-field');
+	  	if (typeof attr !== typeof undefined && attr !== false) {
+	  	  var field = $(this).data('field');
+	  	  $('#'+field).slideDown();
+	  	}
 	  });
 	  el_checkbox_all.on('click', function () {
 	  	$(this).parent().parent().parent().addClass('is-active');
@@ -376,6 +382,32 @@ head.ready(function() {
 		}).first().trigger('click');
 	}
 	contacts();
+
+	// price
+	function price () {
+		var price = $('.js-price'),
+				price_type = price.find('.price__type a'),
+				price_tab = price.find('.price__tab'),
+				price_sort = $('.price__sort-in a');
+		price_type.on('click', function () {
+			var index = $(this).index();
+			price_type.removeClass('is-active');
+			price_tab.hide();
+			price_tab.eq(index).fadeIn();
+			$(this).addClass('is-active');
+			return false;
+		});
+		price_sort.on('click', function () {
+			var index = $(this).index(),
+					price_tab_in = $(this).parent().parent().next().find('.price__tab-in');
+			$(this).parent().find('a').removeClass('is-active');
+			price_tab_in.hide();
+			price_tab_in.eq(index).fadeIn();
+			$(this).addClass('is-active');
+			return false;
+		});
+	}
+	price();
 
 	// scroll
 	$(document).scroll(function () {
