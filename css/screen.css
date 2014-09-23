@@ -600,6 +600,13 @@ a.btn { display: inline-block; text-decoration: none; }
 .price .price__tab, .price .price__tab-in { display: none; }
 .price .title, .price .title-sub { text-align: center; }
 
+.map { padding: 60px 0 120px; }
+.map .map__in { position: relative; margin-bottom: 50px; }
+.map .map__in:after, .map .map__in:before { content: ""; position: absolute; right: 0; background: white; z-index: 10; }
+.map .map__in:after { bottom: 0; width: 500px; height: 20px; }
+.map .map__in:before { bottom: 20px; width: 100px; height: 40px; }
+.map .title { margin-bottom: 60px; text-align: center; }
+
 .main { position: relative; height: 687px; }
 .main .main__slider { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2; }
 .main .main__slide { position: relative; width: 100%; height: 687px; background-position: 50% 50%; background-repeat: no-repeat; }

@@ -51,9 +51,58 @@
 			</div>
 		</nav>
 	</div>
-	<!-- map -->
-	<div class="map js-map">
+	<!-- center -->
+	<div class="l-center">
+		<!-- map -->
+		<div class="map js-map">
+			<div class="title title_level-3">Представительства компании <a href="#">CSE Fulfillment</a> расположены во всех регионах России. На карте показаны все точки офисов во всех регионах России.</div>
+			<div class="map__in">
+				<script src="http://api-maps.yandex.ru/2.0/?lang=ru-RU&load=package.full,regions,geoObject.OverlayFactory,geometry.pixel.Polygon" type="text/javascript"></script>
+				  <script type="text/javascript">
+            ymaps.ready(function(){
+            var myMap = new ymaps.Map("YMapsID", {
+              center:[69.3, 106], // Россия
+              zoom: 2.95,
+              behaviors: ['default', 'scrollZoom']
+            }, {
+              scrollZoomSpeed: 0,
+              dblClickZoomDuration: 0
+            });
+            myPolygon = new ymaps.Polygon([[[38, 196], [38, 17], [82, 17], [82, 196]]], {
+              hintContent: ""
+            }, {
+              fillColor: '#ffffff'
+            });
+            myMap.geoObjects.add(myPolygon);
 
+            ymaps.regions.load('RU', {
+              lang: 'ru',
+              quality: 1
+            }).then(function (result) {
+              var regions = result.geoObjects; // ссылка на коллекцию GeoObjectCollection
+              myMap.geoObjects.add(regions);
+              // Задание стиля для коллекции регионов
+              regions.options.set('fillColor', '#e5e5e5');
+              regions.options.set('strokeColor', '#838383');
+              // Обрабока события входа курсора в регион    
+              result.geoObjects.events.add('mouseenter', function (e) {
+                var region = e.get('target');
+                //region.properties.set("hintContent","<b>"+region.properties.get('name')+"</b><div>"+region.properties.get('osmId')+"</div>");
+                region.options.set('fillColor', '#9c9c9c');
+              });  
+              // Обрабока события выхода курсора из региона
+              result.geoObjects.events.add('mouseleave', function (e) {
+              	var region = e.get('target');
+              	region.options.set('fillColor', '#e5e5e5');
+              });
+            }, function () {
+              alert('No response');
+            });  
+				  });
+				</script>
+				<div id="YMapsID" style="width:954px; height:600px"></div>
+			</div>
+		</div>
 	</div>
 	<!-- share -->
 	<div class="share">
