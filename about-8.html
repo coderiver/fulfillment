@@ -58,49 +58,111 @@
 			<div class="title title_level-3">Представительства компании <a href="#">CSE Fulfillment</a> расположены во всех регионах России. На карте показаны все точки офисов во всех регионах России.</div>
 			<div class="map__in">
 				<script src="http://api-maps.yandex.ru/2.0/?lang=ru-RU&load=package.full,regions,geoObject.OverlayFactory,geometry.pixel.Polygon" type="text/javascript"></script>
-				  <script type="text/javascript">
-            ymaps.ready(function(){
-            var myMap = new ymaps.Map("YMapsID", {
-              center:[69.3, 106], // Россия
-              zoom: 2.95,
-              behaviors: ['default', 'scrollZoom']
-            }, {
-              scrollZoomSpeed: 0,
-              dblClickZoomDuration: 0
-            });
-            myPolygon = new ymaps.Polygon([[[38, 196], [38, 17], [82, 17], [82, 196]]], {
-              hintContent: ""
-            }, {
-              fillColor: '#ffffff'
-            });
-            myMap.geoObjects.add(myPolygon);
-
-            ymaps.regions.load('RU', {
-              lang: 'ru',
-              quality: 1
-            }).then(function (result) {
-              var regions = result.geoObjects; // ссылка на коллекцию GeoObjectCollection
-              myMap.geoObjects.add(regions);
-              // Задание стиля для коллекции регионов
-              regions.options.set('fillColor', '#e5e5e5');
-              regions.options.set('strokeColor', '#838383');
-              // Обрабока события входа курсора в регион    
-              result.geoObjects.events.add('mouseenter', function (e) {
-                var region = e.get('target');
-                //region.properties.set("hintContent","<b>"+region.properties.get('name')+"</b><div>"+region.properties.get('osmId')+"</div>");
-                region.options.set('fillColor', '#9c9c9c');
-              });  
-              // Обрабока события выхода курсора из региона
-              result.geoObjects.events.add('mouseleave', function (e) {
-              	var region = e.get('target');
-              	region.options.set('fillColor', '#e5e5e5');
-              });
-            }, function () {
-              alert('No response');
+			  <script type="text/javascript">
+          ymaps.ready(function(){
+          var myMap = new ymaps.Map("YMapsID", {
+            center:[69.3, 106], // Россия
+            zoom: 2.95
+          }, {
+            scrollZoomSpeed: 0,
+            dblClickZoomDuration: 0
+          });
+          myMap.behaviors.disable(['drag', 'dblClickZoom']);
+          // Белий фон для карти
+         	myPolygon = new ymaps.Polygon([[[38, 196], [38, 17], [82, 17], [82, 196]]], {
+         	  hintContent: ""
+         	}, {
+         	  fillColor: '#ffffff',
+         	  zIndexHover: 1
+         	});
+         	myMap.geoObjects.add(myPolygon);
+         	// Региони
+          ymaps.regions.load('RU', {
+            lang: 'ru',
+            quality: 2
+          }).then(function (result) {
+            var regions = result.geoObjects; // ссылка на коллекцию GeoObjectCollection
+            myMap.geoObjects.add(regions);
+            // Задание стиля для коллекции регионов
+            regions.options.set('fillColor', '#e5e5e5');
+            regions.options.set('strokeColor', '#838383');
+            // Обрабока события входа курсора в регион    
+            result.geoObjects.events.add('mouseenter', function (e) {
+              var region = e.get('target');
+              //region.properties.set("hintContent","<b>"+region.properties.get('name')+"</b><div>"+region.properties.get('osmId')+"</div>");
+              region.options.set('fillColor', '#9c9c9c');
             });  
-				  });
+            // Обрабока события выхода курсора из региона
+            result.geoObjects.events.add('mouseleave', function (e) {
+            	var region = e.get('target');
+            	region.options.set('fillColor', '#e5e5e5');
+            });
+          }, function () {
+            alert('No response');
+          });  
+
+					myMap.geoObjects
+					  .add(new ymaps.Placemark([55.753676, 37.619899], {
+					  	hintContent: 'Москва',
+					    balloonContent: '<div class="baloon">'+
+					    									'<div class="baloon__city">Москва</div>'+
+					    									'<ul class="baloon__contacts">'+
+																	'<li>35088, Россия, г. Ханты-Манскийск </li>'+
+																	'<li>ул. Угрешская , д. 2, корп. 55, </li>'+
+																	'<li><span>пн-пт:</span> с 9:00 до 18:00  <span>сб,вс:</span> выходной</li>'+
+					    									'</ul>'+
+					    									'<ul class="baloon__phone">'+
+					    										'<li>+7 (495) 748-77-48 доб. 3806</li>'+
+					    										'<li>+7 (495) 748-77-48 доб. 3806</li>'+
+					    									'</ul>'+
+					    									'<div class="baloon__mail">'+
+					    										'<a href="mailto:ecommerce.sales@cse.ru">ecommerce.sales@cse.ru</a>'+
+					    									'</div>'+
+					    								'</div>'
+					  }, {
+					    iconImageHref: 'img/marker.png',
+					    hideIconOnBalloonOpen: false,
+					    iconImageSize: [16, 22],
+					    iconImageOffset: [-3, -22],
+					    balloonShadow: false,
+					    balloonOffset: [120, -17],
+					    balloonAutoPan: false,
+					    balloonMaxWidth: 300,
+					    balloonMinWidth: 300
+					  }))
+					  .add(new ymaps.Placemark([61.002486, 69.018408], {
+					  	hintContent: 'Ханты - Мансийск',
+					    balloonContent: '<div class="baloon">'+
+					    									'<div class="baloon__city">Ханты - Мансийск</div>'+
+					    									'<ul class="baloon__contacts">'+
+					    										'<li>35088, Россия, г. Ханты-Манскийск </li>'+
+					    										'<li>ул. Угрешская , д. 2, корп. 55, </li>'+
+					    										'<li><span>пн-пт:</span> с 9:00 до 18:00  <span>сб,вс:</span> выходной</li>'+
+					    									'</ul>'+
+					    									'<ul class="baloon__phone">'+
+					    										'<li>+7 (495) 748-77-48 доб. 3806</li>'+
+					    										'<li>+7 (495) 748-77-48 доб. 3806</li>'+
+					    									'</ul>'+
+					    									'<div class="baloon__mail">'+
+					    										'<a href="mailto:ecommerce.sales@cse.ru">ecommerce.sales@cse.ru</a>'+
+					    									'</div>'+
+					    								'</div>'
+					  }, {
+					    iconImageHref: 'img/marker.png',
+					    hideIconOnBalloonOpen: false,
+					    iconImageSize: [16, 22],
+					    iconImageOffset: [-3, -22],
+					    balloonShadow: false,
+					    balloonOffset: [120, -17],
+					    balloonAutoPan: false,
+					    balloonMaxWidth: 300,
+					    balloonMinWidth: 300
+					  }))
+
+			  	});
 				</script>
 				<div id="YMapsID" style="width:954px; height:600px"></div>
+				<div class="map__hide-yandex"></div>
 			</div>
 		</div>
 	</div>

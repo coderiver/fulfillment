@@ -1397,6 +1397,19 @@
 	.map__in
 		position: relative
 		margin-bottom: 50px
+		&:after
+			content: ""
+			position: absolute
+			left: 45px
+			bottom: 20px
+			width: 50px
+			height: 50px
+			background: #fff
+			z-index: 10 
+	.map__hide-yandex
+		position: absolute
+		right: 0
+		bottom: 0
 		&:after, &:before
 			content: ""
 			position: absolute
@@ -1414,7 +1427,37 @@
 	.title
 		margin-bottom: 60px
 		text-align: center
+	.ymaps-b-balloon__sprite.ymaps-b-balloon__sprite_type_tail
+		display: none
+	.ymaps-b-balloon
+		&:after, &:before
+			content: ""
+			position: absolute
+			left: 37px
+			bottom: -9px
+			+arr(22,12,#fff,tl)
+		&:before
+			left: 36px
+			bottom: -11px
+			border-color: #ccc transparent transparent transparent
 
+.baloon
+	padding: 10px 20px
+	font-size: 12px
+	color: $cl 
+	.baloon__city
+		margin-bottom: 15px 
+		font-size: 18px
+	.baloon__contacts
+		margin-bottom: 15px
+		font-weight: 300
+		span
+			font-weight: 400 
+	.baloon__phone
+		margin-bottom: 15px
+	.baloon__mail
+		font-weight: 300 
+		font-style: italic 
 
 
 
