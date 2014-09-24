@@ -607,7 +607,7 @@ a.btn { display: inline-block; text-decoration: none; }
 .map .map__in:after { top: 0; right: 0; bottom: 0; width: 5px; }
 .map .map__hide-yandex { position: absolute; right: 0; bottom: 0; }
 .map .map__hide-yandex:after, .map .map__hide-yandex:before { content: ""; position: absolute; right: 0; background: white; z-index: 10; }
-.map .map__hide-yandex:after { bottom: 0; width: 500px; height: 20px; }
+.map .map__hide-yandex:after { bottom: 0; width: 600px; height: 20px; }
 .map .map__hide-yandex:before { bottom: 20px; width: 100px; height: 40px; }
 .map .title { margin-bottom: 60px; text-align: center; }
 .map .ymaps-b-balloon__sprite.ymaps-b-balloon__sprite_type_tail { display: none; }
