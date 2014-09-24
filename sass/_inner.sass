@@ -1397,15 +1397,21 @@
 	.map__in
 		position: relative
 		margin-bottom: 50px
-		&:after
+		&:after, &:before
 			content: ""
 			position: absolute
+			background: #fff
+			z-index: 10 
+		&:before
 			left: 45px
 			bottom: 20px
 			width: 50px
 			height: 50px
-			background: #fff
-			z-index: 10 
+		&:after
+			top: 0
+			right: 0
+			bottom: 0
+			width: 5px
 	.map__hide-yandex
 		position: absolute
 		right: 0
