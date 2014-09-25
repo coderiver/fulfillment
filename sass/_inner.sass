@@ -10,6 +10,7 @@
 	.inner__nav
 		border-top: 1px solid rgba(255,255,255,.25) 
 		text-align: center
+		font-size: 0
 		.l-center
 			margin-top: -1px
 		a
@@ -22,13 +23,15 @@
 			text-decoration: none 
 			&:first-child
 				margin: 0
+			&:hover
+				color: $orange 
 			&.is-active
 				background: #FFF
 				color: #302515 
 				cursor: default 
 	.inner__nav_small
 		a
-			padding: 18px 20px
+			padding: 18px
 			margin: 0
 			&:first-child
 				margin: 0
@@ -206,9 +209,11 @@
 		margin: 0 auto 45px
 
 .delivery-time
+	position: relative
 	padding: 70px 0
 	background: url(../img/bg-delivery-time.jpg) no-repeat 50% 50%
 	color: #FFF 
+	z-index: 2 
 	.delivery-time__in
 		display: none
 		width: 500px
@@ -538,6 +543,7 @@
 	overflow: hidden
 	+tr(background .2s)
 	+vertical
+	z-index: 999 
 	&.is-open
 		background: rgba(213,197,173,.9) 
 		.gallery__in
@@ -1241,7 +1247,7 @@
 		display: none
 		margin-top: -11px
 	.select
-		max-width: 340px
+		width: 340px
 	>.title
 		text-align: center
 	.title-sub
@@ -1343,7 +1349,7 @@
 			font-weight: 300 
 			color: $cl
 			text-decoration: none
-			&.is-active
+			&:hover, &.is-active
 				background: $orange
 				color: #fff  
 	.price__table
@@ -1448,7 +1454,7 @@
 			border-color: #ccc transparent transparent transparent
 
 .baloon
-	padding: 10px 20px
+	padding: 15px 20px 25px
 	font-size: 12px
 	color: $cl 
 	.baloon__city

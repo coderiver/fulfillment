@@ -46,7 +46,7 @@
 		<!-- vote -->
 		<div class="vote anim-block">
 			<div class="title">Доставка</div>
-			<div class="vote__in">
+			<form class="vote__in js-validate">
 				<!-- 1 -->
 				<div class="vote__group">
 					<!-- 1 -->
@@ -65,7 +65,7 @@
 							<div class="field">
 								<div class="field__label">Адрес сайта</div>
 								<div class="field__el">
-									<input type="text" placeholder="http://">
+									<input type="text" placeholder="http://" data-validation="required">
 								</div>
 							</div>
 						</div>
@@ -87,8 +87,8 @@
 							<div class="field">
 								<div class="field__label">Контактный номер телефона</div>
 								<div class="field__el">
-									<input type="text" placeholder="+ 7 (***) *** ** **" style="width: 174px;">
-									<input type="text" placeholder="Добавочный" style="width: 151px;">
+									<input type="text" placeholder="+ 7 (***) *** ** **" style="width: 174px;" data-validation="number">
+									<input type="text" placeholder="Добавочный" style="width: 151px;" data-validation="required">
 								</div>
 							</div>
 						</div>
@@ -196,7 +196,7 @@
 										</div>
 										<div class="select__list">
 											<div class="select__items">
-												<label class="select__checkbox"><input type="checkbox" data-field="field-another-services"><span>Иные услуги</span></label>
+												<label class="select__checkbox"><input id="field-services-trigger" type="checkbox"><span>Иные услуги</span></label>
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
 												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
 												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
@@ -311,7 +311,7 @@
 						</div>
 						<div class="vote__right">
 							<!-- field -->
-							<div id="field-another-services" class="field field_services">
+							<div id="field-services" class="field field_services">
 								<div class="field__el">
 									<textarea placeholder="Введите ваш текст..."></textarea>
 								</div>
@@ -430,25 +430,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -470,25 +451,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -513,25 +475,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -553,25 +496,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -596,25 +520,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -636,25 +541,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -679,25 +565,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -719,25 +586,6 @@
 										<div class="select__list">
 											<div class="select__items">
 												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Хранение</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Нанесение штрихового кода на товар</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Стикерование, маркировка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Упаковка, переупаковка</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Электронное уведомление об отгрузке</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Комплектация заказов</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Инвентаризация циклическая</span></label>
-												<label class="select__checkbox"><input type="checkbox"><span>Кросс докинг</span></label>
-											</div>
-											<div class="select__footer">
-												<button class="select__all"><i></i><span>Выбрать всё</span></button>
-												<button class="select__clear"><i></i><span>Очистить</span></button>
 											</div>
 										</div>
 										<input class="select__value" type="hidden">
@@ -763,7 +611,7 @@
 				<div class="vote__btn">
 					<button class="btn"><span>отправить</span></button>
 				</div>
-			</div>
+			</form>
 		</div>
 		<!-- vote -->
 		<div class="vote anim-block">

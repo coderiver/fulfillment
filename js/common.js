@@ -74,8 +74,8 @@ head.ready(function() {
 			}
 			else {
 				el.removeClass('is-open');
-				el.removeClass('is-open');
-				el_checkbox.find('.select__list').hide();
+				el_checkbox.removeClass('is-open');
+				el.find('.select__list').hide();
 				el_checkbox.find('.select__list').hide();
 				$(this).parent().addClass('is-open');
 				$(this).next().fadeIn();
@@ -100,10 +100,25 @@ head.ready(function() {
 	  	$(this).parent().parent().parent().prev().find('.select__title').text(value);
 	  	$(this).parent().parent().parent().next().val(value);
 
-	  	var attr = $(this).attr('data-field');
-	  	if (typeof attr !== typeof undefined && attr !== false) {
-	  	  var field = $(this).data('field');
-	  	  $('#'+field).slideDown();
+	  	var el_checkbox_checked = $(this).parent().parent().find('.select__checkbox input:checked'),
+	  			el_checkbox_checked_length = el_checkbox_checked.length,
+	  			el_checkbox_services = $('#field-services');
+	  			el_checkbox_services_trigger = $('#field-services-trigger');
+	  	el_checkbox_checked.each(function () {
+	  		if (el_checkbox_checked_length == 1) {
+	  			if (el_checkbox_services_trigger.is(':checked')) {
+	  				el_checkbox_services.show();
+	  			}
+	  			else {
+	  				el_checkbox_services.hide();
+	  			}
+	  		}
+	  		else {
+	  			el_checkbox_services.hide();
+	  		}
+	  	});
+	  	if (!el_checkbox_services_trigger.is(':checked')) {
+	  		el_checkbox_services.hide();
 	  	}
 	  });
 	  el_checkbox_all.on('click', function () {
@@ -112,7 +127,7 @@ head.ready(function() {
 	  		return ' ' + $(this).next().text(); 
 	  	}).get(); 
 	  	$(this).parent().parent().prev().find('.select__title').text(value1);
-	  	$(this).parent().parent().next().val(value);
+	  	$(this).parent().parent().next().val(value1);
 	  	$(this).parent().prev().find('.select__checkbox input').each(function () {
 	  		this.checked = true;
 	  	});
@@ -286,17 +301,18 @@ head.ready(function() {
 				slider_prev = el.find('.gallery__prev'),
 				slider_next = el.find('.gallery__next'),
 				slider_close = el.find('.gallery__close'),
+				slider_item = el.find('.gallery__slider-item'),
 				trig = $('.js-gallery-triggers a');
 		trig.on('click', function () {
 			el.show(function () {
 				el.addClass('is-open');
 			});
 			slider.cycle({
-				fx: 'scrollHorz',
+				fx: 'fade',
 				timeout: 0,
 				prev: slider_prev,
 				next: slider_next,
-				autoHeight: 'container'
+				slides: slider_item
 			});
 			var current = $(this).attr('href');
 			slider.cycle('goto', current);
