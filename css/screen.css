@@ -353,14 +353,19 @@ a.btn { display: inline-block; text-decoration: none; }
 .gallery .gallery__in { position: relative; display: inline-block; vertical-align: middle; opacity: 0; -webkit-transform: translateX(200px); -moz-transform: translateX(200px); -ms-transform: translateX(200px); -o-transform: translateX(200px); transform: translateX(200px); -webkit-transition: all 0.4s; -moz-transition: all 0.4s; -o-transition: all 0.4s; transition: all 0.4s; font-size: 0; }
 .gallery .gallery__close { position: absolute; top: -50px; right: -50px; background: url('../img/icons-s9982392fda.png') 0 -2484px no-repeat; width: 37px; height: 36px; }
 .gallery .gallery__prev, .gallery .gallery__next { position: absolute; top: 50%; margin-top: -18px; z-index: 101; }
-.gallery .gallery__prev { right: 50%; margin-right: 450px; background: url('../img/icons-s9982392fda.png') 0 -2731px no-repeat; width: 20px; height: 36px; }
-.gallery .gallery__next { left: 50%; margin-left: 450px; background: url('../img/icons-s9982392fda.png') 0 -2777px no-repeat; width: 20px; height: 36px; }
+.gallery .gallery__prev { left: -20%; background: url('../img/icons-s9982392fda.png') 0 -2731px no-repeat; width: 20px; height: 36px; }
+.gallery .gallery__next { right: -20%; background: url('../img/icons-s9982392fda.png') 0 -2777px no-repeat; width: 20px; height: 36px; }
 
 .tariff-ffm { padding: 60px 0 75px; text-align: center; }
 
 .about-cities { padding: 60px 0; text-align: center; }
+.about-cities .about-cities__slider { position: relative; width: 360px; margin: 0 auto; }
+.about-cities .about-cities__in { overflow: hidden; }
+.about-cities .about-cities__item { width: 100%; }
 .about-cities .about-cities__counter { margin-bottom: 30px; text-align: center; font-size: 80px; font-weight: 100; color: #ff7d00; line-height: 1; }
-.about-cities .about-cities__text { width: 355px; margin: 0 auto; }
+.about-cities .about-cities__prev, .about-cities .about-cities__next { position: absolute; top: 50px; }
+.about-cities .about-cities__prev { left: -100px; background: url('../img/icons-s9982392fda.png') 0 -2731px no-repeat; width: 20px; height: 36px; }
+.about-cities .about-cities__next { right: -100px; background: url('../img/icons-s9982392fda.png') 0 -2777px no-repeat; width: 20px; height: 36px; }
 
 .about-begin { position: relative; padding: 70px 0; border-top: #e3ded9 1px solid; text-align: center; z-index: 2; }
 .about-begin:after { content: ""; position: absolute; bottom: -18px; left: 50%; margin-left: -18px; width: 0px; height: 0px; border-style: solid; border-width: 18px 18px 0 18px; border-color: white transparent transparent transparent; }

@@ -569,12 +569,10 @@
 		margin-top: -18px
 		z-index: 101
 	.gallery__prev
-		right: 50%
-		margin-right: 450px 
+		left: -20%
 		+s(arr-prev)
 	.gallery__next
-		left: 50%
-		margin-left: 450px 
+		right: -20%
 		+s(arr-next)
 
 .tariff-ffm
@@ -584,6 +582,14 @@
 .about-cities
 	padding: 60px 0
 	text-align: center
+	.about-cities__slider
+		position: relative
+		width: 360px
+		margin: 0 auto
+	.about-cities__in
+		overflow: hidden
+	.about-cities__item
+		width: 100%
 	.about-cities__counter
 		margin-bottom: 30px
 		text-align: center
@@ -591,9 +597,15 @@
 		font-weight: 100 
 		color: $orange
 		line-height: 1
-	.about-cities__text
-		width: 355px
-		margin: 0 auto 
+	.about-cities__prev, .about-cities__next
+		position: absolute
+		top: 50px
+	.about-cities__prev
+		left: -100px
+		+s(arr-prev)
+	.about-cities__next
+		right: -100px
+		+s(arr-next)
 
 .about-begin
 	position: relative
